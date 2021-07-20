@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>[[#{tit.DP}]]</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>[[#{tit.DP}]]</h1>
+        <a th:href="@{/}">[[#{btn.reg}]]</a>
+        <form th:action="@{/guardar}" method="post" th:object="${persona}">
+            
+            <input type="hidden" name="idPersona" th:field="*{idPersona}">
+            <label for="nombre">[[#{nom}]]:</label>
+            <input type="text" name="nombre" th:field="*{nombre}">
+            <span th:filed="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" ></span>
+            
+            <label for="apellido">[[#{apell}]]:</label>
+            <input type="text" name="apellido" th:field="*{apellido}">
+            <span style="color: red" th:filed="${#fields.hasErrors('apellido')}" th:errors="*{apellido}" ></span>
+            
+            <label for="telefono">[[#{tel}]]:</label>
+            <input type="tel" name="telefono" th:field="*{telefono}">
+            <span th:filed="${#fields.hasErrors('telefono')}" th:errors="*{telefono}" ></span>
+            
+            <label for="correo">[[#{email}]]:</label>
+            <input type="text" name="email" th:field="*{email}">
+            <span th:filed="${#fields.hasErrors('email')}" th:errors="*{email}" ></span>
+            
+            <br>
+            
+            <input type="submit" name="guardar" th:value="#{btn.gu}"> 
+        </form>
+    </body>
+</html>

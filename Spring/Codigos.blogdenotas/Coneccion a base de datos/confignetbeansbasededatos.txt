@@ -1,0 +1,1 @@
+jdbc:mysql://localhost:3306/test?zeroDateTimeBehavior=CONVERTTONULL ->solo se agrega esto despues de la coneccion &useSSL=false&useTimezone=true&serverTimezone=UTC
